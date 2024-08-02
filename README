@@ -1,0 +1,19 @@
+PASSO A PASSO DO QUE FAZER PARA O POSTGRE FUNCIONAR 
+
+1. Entrar com sudo -su postgres psql (Voce entrará como usuário postgre)
+2. Para ver os usuários, rode com psql '\du'
+3. Para criar uma database rode: sudo -u postrgres createdb nomeUsuario (exemplo, criamos o super user sunyelove para tal) 
+-- INCOMPLETE --
+
+Passo a passo no TPCH 
+
+1. Entrar no diretório dbgen
+2. Editar makfile.suite
+	2.1 CC = gcc
+	2.2 DATABASE = SQLSERVER (Talvez mude ORACLE)
+	2.3 MACHINE = LINUX
+	2.4 WORKLOAS = TPCH
+3. Rodar make -f makefile.suite 
+4. ./dbgen -s -f 1 (Numero de Gb de teste) 
+5. psql -U user -d database -f dss.ddl (script dss gera as tabelas do BD)
+6. Agora é colocar os conteudos de .tbl nas tabelas. Isso ta dando pau
